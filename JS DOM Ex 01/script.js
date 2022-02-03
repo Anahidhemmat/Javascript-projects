@@ -43,3 +43,11 @@ const heading2 = document.createElement("h2");
 heading2.append(`${wordCount} words`);
 
 heading1.insertAdjacentElement("afterend", heading2);
+
+//Exercise 5
+
+//transforming nodelist to an array with Array.from();
+
+Array.from(document.querySelectorAll("p")).forEach((p) => {
+  p.innerText = p.innerText.replaceAll("?", "😂").replaceAll(",", "❤️");
+});
