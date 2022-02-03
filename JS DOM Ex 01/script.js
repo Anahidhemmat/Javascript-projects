@@ -10,6 +10,15 @@ paragraph.innerHTML = paragraph.innerText
   )
   .join(" ");
 
+// const splitted = paragraph.innerText.split(" ");
+// const newArr = splitted.filter((word) => word.length > 7);
+// newArr.map((word) => {
+//   let span = document.createElement("span");
+//   span.innerText = word;
+//   paragraph.append(span);
+//   span.style.backgroundColor = "yellow";
+// });
+
 // paragraph = paragraph.innerText
 //   .split(" ")
 //   .filter((word) => {
