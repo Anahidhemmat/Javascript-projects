@@ -34,3 +34,12 @@ document.body.appendChild(link);
 
 //Exercise 3
 paragraph.innerHTML = paragraph.innerHTML.split(".").join(". <br>");
+
+//Exercise 4
+let wordCount = paragraph.innerText.split(" ").length;
+
+const heading1 = document.querySelector("h1");
+const heading2 = document.createElement("h2");
+heading2.append(`${wordCount} words`);
+
+heading1.insertAdjacentElement("afterend", heading2);
