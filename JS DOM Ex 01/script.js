@@ -31,3 +31,6 @@ link.href = "https://forcemipsum.com/";
 link.textContent = "Text jenerated from Lorem ipsum";
 
 document.body.appendChild(link);
+
+//Exercise 3
+paragraph.innerHTML = paragraph.innerHTML.split(".").join(". <br>");
