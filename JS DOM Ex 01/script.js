@@ -1,3 +1,4 @@
+//Exercise 01
 let paragraph = document.querySelector("p");
 
 paragraph.innerHTML = paragraph.innerText
@@ -21,3 +22,12 @@ paragraph.innerHTML = paragraph.innerText
 //     }
 //   })
 //   .join(" ");
+
+//Exercise 2
+
+const link = document.createElement("a");
+
+link.href = "https://forcemipsum.com/";
+link.textContent = "Text jenerated from Lorem ipsum";
+
+document.body.appendChild(link);
