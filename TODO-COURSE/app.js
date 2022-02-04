@@ -58,6 +58,7 @@ function deleteCheck(e) {
     const todo = item.parentElement;
     //animation
     todo.classList.add("fall");
+    removeLocalStorage(todo);
     //remove
     todo.addEventListener("transitionend", function () {
       todo.remove();
@@ -145,4 +146,18 @@ function getTodos() {
     //append to list
     todolist.append(todoDiv);
   });
+}
+
+//remove local todos
+
+function removeLocalStorage(todo) {
+  let todos;
+  if (localStorage.getItem("todos") === null) {
+    todos = [];
+  } else {
+    todos = JSON.parse(localStorage.getItem("todos"));
+  }
+  const todoIndex = todo.children[0].innerText;
+  todos.splice(todos.indexOf(todoIndex), 1);
+  localStorage.setItem("todos", JSON.stringify(todos));
 }
