@@ -5,7 +5,7 @@
 body {
   font-family: "Poppins", sans-serif;
   margin: 0;
-  background-image: url("adam-chang-IWenq-4JHqo-unsplash.jpg");
+  background-image: url("brooke-lark-pGM4sjt_BdQ-unsplash.jpg");
   background-size: cover;
   background-position: center center;
   min-height: 100vh;
@@ -15,6 +15,8 @@ body {
 }
 .countdown-con {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 h1 {
   font-size: 4rem;
