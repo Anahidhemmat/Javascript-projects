@@ -1,0 +1,42 @@
+const quizData = [
+  {
+    question: "How old is Anahid?",
+    a: "10",
+    b: "17",
+    c: "22",
+    d: "24",
+    correct: "b",
+  },
+  {
+    question: "What is the most used programming language?",
+    a: "Java",
+    b: "C",
+    c: "C++",
+    d: "JavaScript",
+    correct: "d",
+  },
+  {
+    question: "Who is the president of US?",
+    a: "Florin",
+    b: "Trump",
+    c: "Biden",
+    d: "Somayeh",
+    correct: "c",
+  },
+  {
+    question: "What dose the HTML stand for?",
+    a: "Hyper Text Markup Language",
+    b: "Cascading Style Sheet",
+    c: "Jason Object Notation",
+    d: "Application Programming Interface",
+    correct: "a",
+  },
+  {
+    question: "What year was JavaScript lunched?",
+    a: "1996",
+    b: "1995",
+    c: "1994",
+    d: "none of the above",
+    correct: "d",
+  },
+];
