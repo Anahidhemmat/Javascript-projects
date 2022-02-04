@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  background-image: url("adam-chang-IWenq-4JHqo-unsplash.jpg");
+  background-size: cover;
+  background-position: center center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.countdown-con {
+  display: flex;
+}
+h1 {
+  font-size: 4rem;
+}
+.text-big {
+  font-size: 6rem;
+  line-height: 1;
+  margin: 0 2rem;
+}
+.span-text {
+  text-align: center;
+}
+.span-text span {
+  font-size: 1.3rem;
+}
