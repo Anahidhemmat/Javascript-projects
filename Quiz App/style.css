@@ -19,18 +19,23 @@ body {
 
 .quiz-con {
   background-color: #fff;
-  width: 30rem;
+  width: 700px;
   max-width: 100%;
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
 }
-.quiz-header {
-  padding: 4rem;
+.quiz-header h2 {
+  padding: 1rem 2rem;
 }
 
 ul {
   list-style: none;
-  padding: 0;
+  margin: 1rem 0;
+}
+
+ul li {
+  margin: 1rem 0;
+  font-size: 1.1rem;
 }
 
 button {
@@ -38,6 +43,13 @@ button {
   display: block;
   width: 100%;
   color: #fff;
-  padding: 2rem;
+  padding: 1rem 2rem;
   border: none;
+  font-family: inherit;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+button:hover {
+  background-color: rgb(120, 120, 148);
 }
