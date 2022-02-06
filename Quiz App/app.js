@@ -40,3 +40,27 @@ const quizData = [
     correct: "d",
   },
 ];
+
+//selectors
+
+const questionEl = document.querySelector("#question");
+const aLabel = document.querySelector("#a-label");
+const bLabel = document.querySelector("#b-label");
+const cLabel = document.querySelector("#c-label");
+const dLabel = document.querySelector("#d-label");
+
+let currentQuiz = 0;
+
+loadQuiz();
+
+//function for everytime we submit
+
+function loadQuiz() {
+  const currentQuizData = quizData[currentQuiz];
+  questionEl.innerText = currentQuizData.question;
+  aLabel.innerText = currentQuizData.a;
+  bLabel.innerText = currentQuizData.b;
+  cLabel.innerText = currentQuizData.c;
+  dLabel.innerText = currentQuizData.d;
+  currentQuestion++;
+}
