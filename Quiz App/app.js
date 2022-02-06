@@ -48,6 +48,7 @@ const aLabel = document.querySelector("#a-label");
 const bLabel = document.querySelector("#b-label");
 const cLabel = document.querySelector("#c-label");
 const dLabel = document.querySelector("#d-label");
+const submitBtn = document.querySelector("button");
 
 let currentQuiz = 0;
 
@@ -62,5 +63,34 @@ function loadQuiz() {
   bLabel.innerText = currentQuizData.b;
   cLabel.innerText = currentQuizData.c;
   dLabel.innerText = currentQuizData.d;
-  currentQuestion++;
+  currentQuiz++;
 }
+//get selected one
+
+function getSelected() {
+  const answerEls = document.querySelectorAll(".answer");
+
+  let answer = undefined;
+  answerEls.forEach((answerEl) => {
+    if (answerEl.checked) {
+      answer = answerEl.id;
+    }
+  });
+  return answer;
+}
+
+//submit button evet listener
+
+submitBtn.addEventListener("click", () => {
+  let answer = getSelected();
+
+  if (answer) {
+    currentQuiz++;
+    if (currentQuiz < quizData.length) {
+      loadQuiz();
+    } else {
+      //show results
+      alert("you are done");
+    }
+  }
+});
