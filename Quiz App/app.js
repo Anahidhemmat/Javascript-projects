@@ -101,7 +101,7 @@ submitBtn.addEventListener("click", () => {
       loadQuiz();
     } else {
       //show results
-      quiz.innerText = `You answered correctly at ${score}/${quizData.length} questions correctly.`;
+      quiz.innerText = `You answered correctly at ${score}/${quizData.length} questions.`;
       quiz.style.fontSize = "1.5rem";
       quiz.style.fontWeight = "bolder";
       quiz.style.textAlign = "center";
@@ -114,5 +114,3 @@ submitBtn.addEventListener("click", () => {
     }
   }
 });
-
-console.log(quizData.length);
