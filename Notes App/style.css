@@ -40,3 +40,6 @@ body {
   outline: none;
   font-family: inherit;
 }
+.notes .hidden {
+  display: none;
+}
