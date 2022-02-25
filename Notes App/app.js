@@ -11,3 +11,8 @@ editBtn.addEventListener("click", () => {
   mainEl.classList.toggle("hidden");
   textArea.classList.toggle("hidden");
 });
+
+// textArea.addEventListener("input", (e) => {
+//   const { value } = e.target;
+//   mainEl.innerHTML = marked(value);
+// });
