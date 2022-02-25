@@ -12,11 +12,13 @@ const getLocation = async () => {
 
 //get weather with API
 
-const getWeather = async () => {
-  const url = `api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=85508982b261a226da56087d2849b940`;
+const getWeather = async (lat, lon) => {
+  api = "f0894defae7c5584798f8812232a40c2";
+
+  url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${api}`;
 
   const response = await fetch(url);
-  const data = await response.json();
+  const data = response.json();
 
   return data;
 };
@@ -88,3 +90,44 @@ const unit = document.querySelector(".degree-section span");
 const temperatureDescription = document.querySelector(
   ".temperature-description"
 );
+
+getLocation()
+  .then((locationData) => {
+    const timeZone = locationData.timezone;
+    locationTimezone.textContent = timeZone;
+    console.log(locationData);
+    return getWeather(locationData.lat, locationData.lon);
+  })
+  .then((weatherData) => {
+    console.log(weatherData);
+
+    const weatherTemp = weatherData.main.temp;
+    const weatherMain = weatherData.weather[0].main;
+    const weatherDescription = weatherData.weather[0].description;
+
+    //display icon
+    const iconName = getIcons(weatherMain);
+    const iconImg = document.createElement("img");
+    iconImg.src = `icons/${iconName}`;
+    icon.append(iconImg);
+
+    //display unit
+    degree.textContent = Math.floor(weatherTemp);
+    unit.textContent = "K";
+
+    degreeSection.addEventListener("click", () => {
+      if (unit.textContent === "K") {
+        degree.textContent = getTemp(weatherTemp).far;
+        unit.textContent = "F";
+      } else if (unit.textContent === "F") {
+        degree.textContent = getTemp(weatherTemp).can;
+        unit.textContent = "C";
+      } else {
+        degree.textContent = getTemp(weatherTemp).kel;
+        unit.textContent = "K";
+      }
+    });
+
+    //display description
+    temperatureDescription.textContent = weatherDescription;
+  });
