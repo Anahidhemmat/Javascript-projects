@@ -77,3 +77,14 @@ function getTemp(weTemp) {
     can: Math.floor(c),
   });
 }
+
+// selectors
+
+const locationTimezone = document.querySelector(".timezone");
+const icon = document.querySelector(".icon");
+const degreeSection = document.querySelector(".degree-section");
+const degree = document.querySelector(".degree-section h2");
+const unit = document.querySelector(".degree-section span");
+const temperatureDescription = document.querySelector(
+  ".temperature-description"
+);
