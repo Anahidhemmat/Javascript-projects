@@ -27,7 +27,7 @@ const getDayOrNight = () => {
   let dayOrNight;
   const d = new Date();
 
-  if (d.getHours() >= 6 && d.getHours() < 19) {
+  if (d.getHours() >= 6 && d.getHours() <= 19) {
     dayOrNight = "Day";
   } else {
     dayOrNight = "Night";
@@ -64,3 +64,16 @@ const getIcons = (weMain) => {
   }
   return icon;
 };
+
+//get tempreture => function
+
+function getTemp(weTemp) {
+  const k = weTemp;
+  const f = ((k - 273.15) * 9) / 5 + 32;
+  const c = k - 273.15;
+  return (temp = {
+    kel: Math.floor(k),
+    far: Math.floor(f),
+    can: Math.floor(c),
+  });
+}
