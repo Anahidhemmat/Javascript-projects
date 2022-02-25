@@ -20,3 +20,47 @@ const getWeather = async () => {
 
   return data;
 };
+
+//Is it day or night => function
+
+const getDayOrNight = () => {
+  let dayOrNight;
+  const d = new Date();
+
+  if (d.getHours() >= 6 && d.getHours() < 19) {
+    dayOrNight = "Day";
+  } else {
+    dayOrNight = "Night";
+  }
+};
+
+//Witch icon should be displayed = > function => get icons
+
+const getIcons = (weMain) => {
+  let icon;
+  switch (weMain) {
+    case "Thunderstorm":
+      icon = `${weMain}.svg`;
+      break;
+    case "Drizzle":
+      icon = `${weMain}.svg`;
+      break;
+    case "Rain":
+      icon = `${weMain}.svg`;
+      break;
+    case "Snow":
+      icon = `${weMain}.svg`;
+      break;
+    case "Clouds":
+      icon = `${weMain}.svg`;
+      break;
+    case "Atmosphere":
+      icon = `${weMain}.png`;
+      break;
+    case "Clear":
+      const dayOrNight = getDayOrNight();
+      icon = `${weMain}-${dayOrNight}.svg`;
+      break;
+  }
+  return icon;
+};
