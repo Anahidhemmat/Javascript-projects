@@ -7,10 +7,7 @@ const updateCity = async (city) => {
   const cityDetail = await getCity(city);
   const weather = await getWeather(cityDetail.Key);
 
-  return {
-    cityDetail: cityDetail,
-    weather: weather,
-  };
+  return { cityDetail, weather }; //object shorthand notation
 };
 
 //form input event
