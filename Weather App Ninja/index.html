@@ -11,13 +11,46 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-    <!-- Css file -->
+    <!-- Css File -->
     <link rel="stylesheet" href="style.css" />
     <title>Weather App Ninja</title>
   </head>
   <body>
-    <!-- Script files -->
-    <script src="Scripts/app.js"></script>
+    <section class="container my-5 mx-auto">
+      <!-- Title -->
+      <h1 class="text-muted text-center my-4">Ninja Weather</h1>
+      <!-- Location Input -->
+      <form class="change-location my-4 text-center text-muted">
+        <label for="city">Enter a location for weather information</label>
+        <input type="text" name="city" class="form-control p-3 m-2" />
+      </form>
+
+      <!-- Location information Card -->
+      <section class="card shadow-lg rounded">
+        <img
+          src="https://via.placeholder.com/400x300C/O https://placeholder.com/C/O https://placeholder.com/"
+          class="card-img-top"
+        />
+        <section class="icon bg-light mx-auto text-center">
+          <!-- Icon -->
+        </section>
+        <!-- Weather information details -->
+        <secction class="details text-muted text-uppercase text-center">
+          <h5 class="my-3">City name</h5>
+          <section class="my-3">Weather condition</section>
+          <!-- Temprature -->
+          <section class="display-4 my-4">
+            <span>Temp</span>
+            <!-- unit -->
+            <span>&deg;C</span>
+          </section>
+        </secction>
+      </section>
+    </section>
+    <!-- Script Files -->
+
+    <!-- forcast.js should be before app.js -->
     <script src="Scripts/forcast.js"></script>
+    <script src="Scripts/app.js"></script>
   </body>
 </html>
