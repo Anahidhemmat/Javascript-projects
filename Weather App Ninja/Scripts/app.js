@@ -8,8 +8,10 @@ const tempSpan = document.querySelector(".temp");
 
 //update ui => function
 const updateUi = (data) => {
-  const cityDets = data.cityDetail;
-  const weather = data.weather;
+  //   const cityDets = data.cityDetail;
+  //   const weather = data.weather;
+
+  const { cityDets, weather } = data;
 
   //display data
   cityName.textContent = cityDets.EnglishName;
