@@ -5,6 +5,8 @@ const details = document.querySelector(".details");
 const cityName = document.querySelector(".details h5");
 const weCon = document.querySelector(".we-con");
 const tempSpan = document.querySelector(".temp");
+const time = document.querySelector(".time");
+const icon = document.querySelector(".icon img");
 
 //update ui => function
 const updateUi = (data) => {
@@ -19,17 +21,24 @@ const updateUi = (data) => {
   tempSpan.textContent = weather.Temperature.Metric.Value;
   console.log(data);
 
-  //remove d-none class from a card
+  //display day and night images
+
+  if (weather.IsDayTime === true) {
+    time.src = "images/day.png";
+  } else {
+    time.src = "images/night.jpeg";
+  }
   if (card.classList.contains("d-none")) {
+    //remove d-none class from a card
     card.classList.remove("d-none");
   }
 };
 //update next city => function
 const updateCity = async (city) => {
-  const cityDetail = await getCity(city);
-  const weather = await getWeather(cityDetail.Key);
+  const cityDets = await getCity(city);
+  const weather = await getWeather(cityDets.Key);
 
-  return { cityDetail, weather }; //object shorthand notation
+  return { cityDets, weather }; //object shorthand notation
 };
 
 //form input event
