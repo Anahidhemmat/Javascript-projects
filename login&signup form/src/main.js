@@ -12,6 +12,13 @@ const setInputMessage = (inputElement, message) => {
     ".form-input-error-message"
   ).textContent = message;
 };
+
+const clearInputError = (inputElement) => {
+  inputElement.classList.remove("form-message-error");
+  inputElement.parentElement.querySelector(
+    ".form-input-error-message"
+  ).textContent = "";
+};
 //links
 document.addEventListener("DOMContentLoaded", () => {
   const loginForm = document.querySelector("#login");
@@ -38,6 +45,9 @@ document.addEventListener("DOMContentLoaded", () => {
       if ((e.target.id = "username" && e.target.value.length < 8)) {
         setInputMessage(element, "Username must be at least 8 charecters");
       }
+    });
+    element.addEventListener("input", (e) => {
+      clearInputError(element);
     });
   });
 });
