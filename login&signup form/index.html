@@ -10,11 +10,10 @@
   </head>
   <body>
     <section class="container">
-      <form class="form" id="login">
+      <!-- login form -->
+      <form class="form form-hidden" id="login">
         <h2 class="form-title">Login</h2>
-        <section class="form-message form-message-error">
-          Incorrect username/password combination
-        </section>
+        <section class="form-message form-message-error"></section>
         <section class="form-input-group">
           <input
             type="text"
@@ -22,13 +21,11 @@
             autofocus
             placeholder="Username or email"
           />
-          <section class="form-input-error-message">
-            This is an error message
-          </section>
+          <section class="form-input-error-message"></section>
         </section>
         <section class="form-input-group">
           <input
-            type="text"
+            type="password"
             class="form-input"
             autofocus
             placeholder="Password"
@@ -41,7 +38,55 @@
         </p>
         <p class="form-text">
           <a class="form-link" id="linkCreateAccount"
-            >Don't have an account? Create account?</a
+            >Don't have an account? Create account.</a
+          >
+        </p>
+      </form>
+      <!-- create account form -->
+      <form class="form" id="createAccount">
+        <h2 class="form-title">Create Account</h2>
+        <section class="form-message form-message-error"></section>
+        <section class="form-input-group">
+          <input
+            type="text"
+            class="form-input"
+            autofocus
+            placeholder="Username"
+          />
+          <section class="form-input-error-message"></section>
+        </section>
+        <section class="form-input-group">
+          <input
+            type="text"
+            class="form-input"
+            autofocus
+            placeholder="Email address"
+          />
+          <section class="form-input-error-message"></section>
+        </section>
+        <section class="form-input-group">
+          <input
+            type="password"
+            class="form-input"
+            autofocus
+            placeholder="Password"
+          />
+          <section class="form-input-error-message"></section>
+        </section>
+        <section class="form-input-group">
+          <input
+            type="password"
+            class="form-input"
+            autofocus
+            placeholder="Confirm password"
+          />
+          <section class="form-input-error-message"></section>
+        </section>
+        <button type="submit" class="form-button">Submit</button>
+
+        <p class="form-text">
+          <a class="form-link" id="linkLogin"
+            >Already have an account? Sing in.</a
           >
         </p>
       </form>
