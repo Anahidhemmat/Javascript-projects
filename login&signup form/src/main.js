@@ -2,12 +2,13 @@
 const loginForm = document.querySelector("#login");
 const createAccountForm = document.querySelector("#createAccount");
 const usernameAndEmailInput = document.querySelector("#usernameAndEmail");
+const loginPasswordInput = document.querySelector("#loginPassword");
 const usernameInput = document.querySelector("#username");
 const passwordInput = document.querySelector("#password");
 const confirmPassword = document.querySelector("#confirmPassword");
 const loginLink = document.querySelector("#linkLogin");
 const createAccountLink = document.querySelector("#linkCreateAccount");
-
+const formMessage = document.querySelector(".form-message");
 //links
 createAccountLink.addEventListener("click", (e) => {
   e.preventDefault();
@@ -19,6 +20,18 @@ loginLink.addEventListener("click", (e) => {
   e.preventDefault();
   loginForm.classList.remove("form-hidden");
   createAccountForm.classList.add("form-hidden");
+});
+
+loginForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  if (loginPasswordInput.value.length < 6) {
+    formMessage.textContent = "Invalid password";
+    loginPasswordInput.classList.add("form-input-error");
+  } else {
+    formMessage.classList.add("form-message-success");
+    formMessage.textContent = "You are logged in :)";
+    loginForm.reset();
+  }
 });
 // const setFormMessage = (formElement, type, message) => {
 //   const messageElement = document.querySelector(".form-message");
