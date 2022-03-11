@@ -8,6 +8,18 @@ const confirmPassword = document.querySelector("#confirmPassword");
 const loginLink = document.querySelector("#linkLogin");
 const createAccountLink = document.querySelector("#linkCreateAccount");
 
+//links
+createAccountLink.addEventListener("click", (e) => {
+  e.preventDefault();
+  loginForm.classList.add("form-hidden");
+  createAccountForm.classList.remove("form-hidden");
+});
+
+loginLink.addEventListener("click", (e) => {
+  e.preventDefault();
+  loginForm.classList.remove("form-hidden");
+  createAccountForm.classList.add("form-hidden");
+});
 // const setFormMessage = (formElement, type, message) => {
 //   const messageElement = document.querySelector(".form-message");
 
