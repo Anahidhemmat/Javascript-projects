@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login / sign Up Form</title>
+    <!-- css file -->
+    <link rel="stylesheet" href="src/main.css" />
+  </head>
+  <body>
+    <section class="container">
+      <form class="form" id="login">
+        <h2 class="form-title">Login</h2>
+        <section class="form-message form-message-error">
+          Incorrect username/password combination
+        </section>
+        <section class="form-input-group">
+          <input
+            type="text"
+            class="form-input"
+            autofocus
+            placeholder="Username or email"
+          />
+          <section class="form-input-error-message">
+            This is an error message
+          </section>
+        </section>
+        <section class="form-input-group">
+          <input
+            type="text"
+            class="form-input"
+            autofocus
+            placeholder="Password"
+          />
+          <section class="form-input-error-message"></section>
+        </section>
+        <button type="submit" class="form-button">Submit</button>
+        <p class="form-text">
+          <a href="#" class="form-link">Forgot your password?</a>
+        </p>
+        <p class="form-text">
+          <a class="form-link" id="linkCreateAccount"
+            >Don't have an account? Create account?</a
+          >
+        </p>
+      </form>
+    </section>
+
+    <!-- ioicons -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <!-- js files -->
+    <script src="src/main.js"></script>
+  </body>
+</html>
