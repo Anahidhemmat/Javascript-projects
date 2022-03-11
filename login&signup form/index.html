@@ -11,7 +11,7 @@
   <body>
     <section class="container">
       <!-- login form -->
-      <form class="form form-hidden" id="login">
+      <form class="form" id="login">
         <h2 class="form-title">Login</h2>
         <section class="form-message form-message-error"></section>
         <section class="form-input-group">
@@ -43,7 +43,7 @@
         </p>
       </form>
       <!-- create account form -->
-      <form class="form" id="createAccount">
+      <form class="form form-hidden" id="createAccount">
         <h2 class="form-title">Create Account</h2>
         <section class="form-message form-message-error"></section>
         <section class="form-input-group">
@@ -51,6 +51,7 @@
             type="text"
             class="form-input"
             autofocus
+            id="username"
             placeholder="Username"
           />
           <section class="form-input-error-message"></section>
