@@ -13,7 +13,7 @@ form.addEventListener("submit", (e) => {
   checkInputs();
 });
 
-//check inputs function
+//check inputs => function
 
 const checkInputs = () => {
   // get the values from inputs
@@ -21,4 +21,25 @@ const checkInputs = () => {
   const emailValue = email.value.trim();
   const passwordValue = password.value.trim();
   const passwordConfirmValue = passwordConfirm.value.trim();
+
+  if (!usernameValue) {
+    // show error & add error class
+    setErrorFor(username, "Username cannot be blank");
+  } else {
+    //   add success class
+    setSuccessFor(username);
+  }
+};
+
+// set error => function
+
+const setErrorFor = (input, message) => {
+  const formControl = input.parentElement;
+  const small = document.querySelector("small");
+
+  // add error text
+  small.innerText = message;
+
+  // add error class
+  formControl.className = "form-control error";
 };
