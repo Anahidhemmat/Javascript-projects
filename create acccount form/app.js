@@ -29,26 +29,31 @@ const checkInputs = () => {
     //   add success class
     setSuccessFor(username);
   }
+
   if (!emailValue) {
     // show error & add error class
     setErrorFor(email, "Email cannot be blank");
+  } else if (!isEmail(emailValue)) {
+    setErrorFor(email, "Email is not valid");
   } else {
     //   add success class
     setSuccessFor(email);
   }
+
   if (!passwordValue) {
     // show error & add error class
     setErrorFor(password, "Password cannot be blank");
   } else {
     //   add success class
-    setSuccessFor(username);
+    setSuccessFor(password);
   }
+
   if (!passwordConfirmValue) {
     // show error & add error class
     setErrorFor(passwordConfirm, "Password cannot be blank");
   } else {
     //   add success class
-    setSuccessFor(username);
+    setSuccessFor(passwordConfirm);
   }
 };
 
@@ -56,10 +61,21 @@ const checkInputs = () => {
 
 const setErrorFor = (input, message) => {
   const formControl = input.parentElement;
-  const small = document.querySelector("small");
-
+  let small;
+  if (input.id === "username") {
+    small = input.nextElementSibling;
+    small.innerText = message;
+  } else if (input.id === "email") {
+    small = input.nextElementSibling;
+    small.innerText = message;
+  } else if (input.id === "password") {
+    small = input.nextElementSibling;
+    small.innerText = message;
+  } else if ((input.id = "passwordConfirm")) {
+    small = input.nextElementSibling;
+    small.innerText = message;
+  }
   // add error text
-  small.innerText = message;
 
   // add error class
   formControl.className = "form-control error";
@@ -71,4 +87,11 @@ const setSuccessFor = (input) => {
   // add seccess class
   const formControl = input.parentElement;
   formControl.className = "form-control success";
+};
+
+// is email valid => function
+const isEmail = (email) => {
+  return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+    email
+  );
 };
