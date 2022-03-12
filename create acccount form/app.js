@@ -43,6 +43,8 @@ const checkInputs = () => {
   if (!passwordValue) {
     // show error & add error class
     setErrorFor(password, "Password cannot be blank");
+  } else if (passwordValue.length < 6) {
+    setErrorFor(password, "Password must be at least 6 charecters");
   } else {
     //   add success class
     setSuccessFor(password);
@@ -51,6 +53,8 @@ const checkInputs = () => {
   if (!passwordConfirmValue) {
     // show error & add error class
     setErrorFor(passwordConfirm, "Password cannot be blank");
+  } else if (passwordValue !== passwordConfirmValue) {
+    setErrorFor(passwordConfirm, "Password does not match");
   } else {
     //   add success class
     setSuccessFor(passwordConfirm);
