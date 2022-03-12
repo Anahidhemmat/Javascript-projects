@@ -29,6 +29,27 @@ const checkInputs = () => {
     //   add success class
     setSuccessFor(username);
   }
+  if (!emailValue) {
+    // show error & add error class
+    setErrorFor(email, "Email cannot be blank");
+  } else {
+    //   add success class
+    setSuccessFor(email);
+  }
+  if (!passwordValue) {
+    // show error & add error class
+    setErrorFor(password, "Password cannot be blank");
+  } else {
+    //   add success class
+    setSuccessFor(username);
+  }
+  if (!passwordConfirmValue) {
+    // show error & add error class
+    setErrorFor(passwordConfirm, "Password cannot be blank");
+  } else {
+    //   add success class
+    setSuccessFor(username);
+  }
 };
 
 // set error => function
