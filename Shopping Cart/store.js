@@ -22,6 +22,18 @@ function ready() {
     const btn = addToCartBtns[i];
     btn.addEventListener("click", addToCart);
   }
+  document
+    .getElementsByClassName("btn-purchase")[0]
+    .addEventListener("click", purchase);
+}
+
+function purchase() {
+  alert("Thank you for your purchase");
+  const cartItems = document.getElementsByClassName("cart-items")[0];
+  while (cartItems.hasChildNodes()) {
+    cartItems.removeChild(cartItems.firstChild);
+  }
+  updateCartTotal();
 }
 
 function removeCartItem(e) {
