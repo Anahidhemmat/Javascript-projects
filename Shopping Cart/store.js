@@ -13,9 +13,23 @@ function ready() {
   }
 }
 
+const quantityInputs = document.getElementsByClassName("cart-quantity-input");
+for (let i = 0; i < quantityInputs.length; i++) {
+  const input = quantityInputs[i];
+  input.addEventListener("change", quantityChanged);
+}
+
 function removeCartItem(e) {
   let btnClicked = e.target;
   btnClicked.parentElement.parentElement.remove();
+  updateCartTotal();
+}
+
+function quantityChanged(e) {
+  const input = e.target;
+  if (isNaN(input.value) || input.value <= 0) {
+    input.value = 1;
+  }
   updateCartTotal();
 }
 
