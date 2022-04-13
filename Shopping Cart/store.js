@@ -46,11 +46,20 @@ function addToCart(e) {
   const imgSrc = shopItem.getElementsByClassName("shop-item-image")[0].src;
   // console.log(title, price, imgSrc);
   addItemToCart(title, price, imgSrc);
+  updateCartTotal();
 }
 
 function addItemToCart(title, price, imgSrc) {
   const cartRow = document.createElement("div");
   cartRow.classList.add("cart-row");
+  const cartItemNames = document.getElementsByClassName("cart-item-title");
+  for (let i = 0; i < cartItemNames.length; i++) {
+    if (cartItemNames[i] == title) {
+      alert("This item is already added to the cart");
+      return;
+    }
+  }
+
   const cartRowContents = `
   <div class="cart-item cart-column">
             <img
@@ -63,13 +72,20 @@ function addItemToCart(title, price, imgSrc) {
           </div>
           <span class="cart-price cart-column">${price}</span>
           <div class="cart-quantity cart-column">
-            <input class="cart-quantity-input" type="number" value="2" />
+            <input class="cart-quantity-input" type="number" value="1" />
             <button class="btn btn-danger" type="button">REMOVE</button>
           </div>
   `;
   const cartItem = document.getElementsByClassName("cart-items")[0];
   cartRow.innerHTML = cartRowContents;
   cartItem.append(cartRow);
+
+  cartRow
+    .getElementsByClassName("btn-danger")[0]
+    .addEventListener("click", removeCartItem);
+  cartRow
+    .getElementsByClassName("cart-quantity-input")[0]
+    .addEventListener("change", quantityChanged);
 }
 function updateCartTotal() {
   const cartItemContainer = document.getElementsByClassName("cart-items")[0];
@@ -86,6 +102,7 @@ function updateCartTotal() {
 
     total = total + price * quantity;
   }
+  total = Math.round(total * 100) / 100;
   document.getElementsByClassName("cart-total-price")[0].innerText =
     "$" + total;
 }
