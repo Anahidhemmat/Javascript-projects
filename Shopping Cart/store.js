@@ -1,12 +1,22 @@
-const removeCartItemBtns = document.getElementsByClassName("btn-danger");
+if (document.readyState == "loading") {
+  document.addEventListener("DOMContentLoaded", ready);
+} else {
+  ready();
+}
 
-for (let i = 0; i < removeCartItemBtns.length; i++) {
-  let btn = removeCartItemBtns[i];
-  btn.addEventListener("click", (e) => {
-    let btnClicked = e.target;
-    btnClicked.parentElement.parentElement.remove();
-    updateCartTotal();
-  });
+function ready() {
+  const removeCartItemBtns = document.getElementsByClassName("btn-danger");
+
+  for (let i = 0; i < removeCartItemBtns.length; i++) {
+    let btn = removeCartItemBtns[i];
+    btn.addEventListener("click", removeCartItem);
+  }
+}
+
+function removeCartItem(e) {
+  let btnClicked = e.target;
+  btnClicked.parentElement.parentElement.remove();
+  updateCartTotal();
 }
 
 function updateCartTotal() {
